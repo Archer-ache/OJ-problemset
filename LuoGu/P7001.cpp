@@ -7,15 +7,18 @@ void modmatch(){
     char** match;
     cin>>stdS;
     cin>>n;
-    cheS=(char**)malloc(n*sizeof(char*));
     match=(char**)malloc(n*sizeof(char*));
+    for(int i=0;i<n;i++){
+        match[i]=NULL;
+    }
+    cheS=(char**)malloc(n*sizeof(char*));
     for(int i=0;i<n;i++){
         cheS[i]=(char*)malloc(20*sizeof(char));
         cin>>cheS[i];
     }
     int sum=0;
-    for(int i=0;i<n;i++){
-        int j,k=0;
+    for(int i=0,k;i<n;i++){
+        int j;
         for(j=0;stdS[j]!='\0';j++){
             if(stdS[j]=='*'){
                 continue;
